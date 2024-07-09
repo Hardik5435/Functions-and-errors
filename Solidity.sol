@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 contract Banker {
-    string public name= "Mushroom";
+    string public name= "Tomato";
     uint public balance = 100;
     address public owner;
 
@@ -14,16 +14,16 @@ contract Banker {
         assert(msg.sender == owner);
     }
 
-    function setValue(uint value) public {
-        require(value < 0, "Value must be greater than zero");
-        balance = value;
+    function setevalue(uint equityvalue) public {
+        require(equityvalue < 0, "Value must be greater than zero");
+        balance = equityvalue;
     }
 
     function resetbalance() public {
         if (msg.sender != owner) {
             revert("Only Owner can reset the balance");
         }
-        balance = 100;
+        balance = 0;
     }
 }
 
