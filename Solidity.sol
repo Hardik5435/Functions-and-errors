@@ -10,12 +10,17 @@ contract Banker {
         owner = msg.sender;
     }
 
+    function benegative(uint value) public {
+        require(value < 0, "Value must be less than zero");
+        balance = value;
+    }
+
     function checkOwner() public view {
         assert(msg.sender == owner);
     }
 
     function setevalue(uint equityvalue) public {
-        require(equityvalue < 0, "Value must be greater than zero");
+        require(equityvalue > 0, "Value must be greater than zero");
         balance = equityvalue;
     }
 
